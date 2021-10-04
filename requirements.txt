@@ -4,6 +4,7 @@ tqdm
 scipy
 numpy
 lxml
+ffmpeg
 pydub
 soundfile
 matplotlib
