@@ -5,6 +5,7 @@ scipy
 numpy
 lxml
 pydub
+libsndfile1
 matplotlib
 audiomentations  >=0.13
 librosa
