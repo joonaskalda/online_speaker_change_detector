@@ -4,6 +4,7 @@ tqdm
 scipy
 numpy
 lxml
+pydub
 matplotlib
 audiomentations  >=0.13
 librosa
