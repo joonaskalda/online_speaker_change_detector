@@ -11,6 +11,4 @@ matplotlib
 audiomentations  >=0.13
 librosa
 playsound
-queue
-pydub
 streamlit_webtrc
