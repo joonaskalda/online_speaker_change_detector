@@ -10,4 +10,4 @@ soundfile
 matplotlib
 audiomentations  >=0.13
 librosa
-streamlit-webtrc
+streamlit-webrtc
