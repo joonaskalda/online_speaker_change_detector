@@ -10,7 +10,6 @@ soundfile
 matplotlib
 audiomentations  >=0.13
 librosa
-multiprocessing
 playsound
 queue
 pydub
