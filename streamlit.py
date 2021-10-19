@@ -127,7 +127,8 @@ def stream(file_name):
     streaming_decoder = StreamingDecoder(model)
     frame_number = 0
 
-    p = multiprocessing.Process(target=playsound.playsound, args=(file_name,))
+    #p = multiprocessing.Process(target=playsound.playsound, args=(file_name,))
+    p = multiprocessing.Process(target=play, args=(sound,))
     p.start()
     start_0 = timeit.default_timer()
     for i in range(0, len(audio), 1000):
