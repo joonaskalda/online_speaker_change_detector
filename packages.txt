@@ -1,6 +1,3 @@
 alsa-utils
-alsa-firmware
-alsa-lib
-alsa-oss
 ffmpeg
 libsndfile1-dev
