@@ -12,7 +12,7 @@ import timeit
 from online_scd.utils import load_wav_file
 
 import multiprocessing
-#from playsound import playsound
+from playsound import playsound
 
 import queue
 import time
@@ -115,9 +115,7 @@ def stream_mic():
 def stream(file_name):
 
     sound = pydub.AudioSegment.from_wav(file_name)
-    sound = sound.set_channels(1).set_frame_rate(
-    16000
-    )
+    sound = sound.set_channels(1).set_frame_rate(16000)
     audio = np.array(sound.get_array_of_samples())/32768
 
     last_rows = np.zeros((1,1))
@@ -129,7 +127,7 @@ def stream(file_name):
     streaming_decoder = StreamingDecoder(model)
     frame_number = 0
 
-    p = multiprocessing.Process(target=play, args=(sound,))
+    p = multiprocessing.Process(target=playsound, args=(file_name,))
     p.start()
     start_0 = timeit.default_timer()
     for i in range(0, len(audio), 1000):
@@ -146,7 +144,7 @@ def stream(file_name):
 
         end = timeit.default_timer()
         text_output.markdown(f"{end-start_0} seconds")
-        time.sleep(1/16-end+start)
+        time.sleep(max(0,1/16-end+start))
     st.button("Re-run")
 
 
@@ -154,7 +152,7 @@ def main():
     option = st.selectbox(
         'Which audio source would you like to use?',
         ('microphone', 'sample wav (osoon)'), 0)
-    if option == 'sample (osoon)':
+    if option == 'sample wav (osoon)':
         file_name = "3321821.wav"
         stream(file_name)
     elif option == 'microphone':
